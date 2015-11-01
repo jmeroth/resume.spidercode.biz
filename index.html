@@ -4,98 +4,205 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 	<link href="res.css" rel="stylesheet">
+	
+	<script type="text/javascript">
+	function toggleNavPanel(x,y,z){
+		var panel = document.getElementById(x);
+		var navarrow = document.getElementById(z);
+		var maxH = y;
+		if(panel.style.height == maxH){
+			panel.style.height = "0px";
+			navarrow.innerHTML="&#9662";
+		}else{
+			panel.style.height=maxH;
+			navarrow.innerHTML="&#9652";
+		}
+	}
+    </script>
+
 </head>
 
 <body>
-	<div id="header"><strong>John F. Meroth</strong><br>
-		<strong>781-856-4140 </strong><br>
-		<a href="mailto:jmeroth@alum.rpi.edu"><span id="email">jmeroth@alum.rpi.edu</span></a><br>
+
+	<div id="postit">John F. Meroth<br>
+		781-856-4140<br>
+		<a href="mailto:jmeroth@alum.rpi.edu?Subject=Resume%20Questions&body=This%20is%20my%20inquiry."><span id="email">jmeroth@alum.rpi.edu</span></a><br>
 		<a href="http://www.spidercode.org"><i><b>www.spidercode.org</b></i></a><br>
 		<a href="https://github.com/jmeroth"><i><b>https://github.com/jmeroth</b></i></a><br>
 	</div>
 
-	<div class="right">
-		<h3>SUMMARY:</h3>
-		<br/>
-		<p>Seeking a key role as an Application Developer with an emphasis on reporting, database  and web technologies.  I seek to utilize my technical skills and experience to build or implement intuitive applications with a strong focus on the end user.</p>
-		<br/>
+<!-- Topbar Section -->
+
+	<div id="topbar">
+		<div id="logo">Resum&#233;</div>
+		<div id="btn">
+			<button onclick="toggleNavPanel('sections_panel', '85px', 'navarrow	')">Skills at a Glance <span id="navarrow">&#9662;</span></button>
+		</div>
+	<div id="sections_panel">
+			<div>
+				JavaScript, Oracle SQL, MySQL, jQuery, HTML, CSS, PHP.
+			</div>
+		</div>	
+	</div>
+
+
+ 
+
+	<div class="content">
+		<header id="top">
+    		<h3>SUMMARY:</h3>
+			<p>Seeking a key role as an Application Developer with an emphasis on reporting, database  and web technologies.  I seek to utilize my technical skills and experience to build or implement intuitive applications with a strong focus on the end user.</p>
+    		<hr />
+  		</header>
+		
+
 		<h3>INFORMATION TECHNOLOGY SKILLS:</h3>
-		<ul>
-			<li>PHP Server Side Programming: Used PHP to create several on-line web applications based on XAMPP. Functionality based on courses in Dynamic Web Applications.</li>
-			<li>Git Version Control: use of Git and GitHub to commit changes to current web applications and to deploy changes to my live environment</li>
-			<li>SQL:  Ability to create complex and advanced sql queries for application development and report writing.  Recent work has included multi-field joins, self joins, aliasing, subqueries, aggregate functions and recursive code.</li>
-			<li>MS SQL Server:  Utilized to write queries and produce reports from the departments Project Management and Time and Attendance applications.  Completed trainings including<em> Working with Sub queries Using MS SQL Server</em>.</li>
-			<li>MySQL:  Designed and implemented databases for on-line web applications and as the back-end of my Wordpress website.</li>
-			<li>Business Analyst: Frequent communication with end user customers and classroom training course - “<em>Business Analysis for IT Professionals”</em>.</li>
-			<li>JAVA Programming:  Scripts written to automate database queries and updates.  Completed college courses including <em>Data Structures.</em></li>
-			<li>C++:  Completed courses in <em>Object Oriented Programming </em>at Bunker Hill Community College.</li>
-			<li>Python:  Programs written to manipulate text files and search for email and web addresses.  Completed several online courses including: <em>Programming Languages</em> - Udacity, CS-262.</li>
-			<li>IDE’s: NetBeans, Eclipse, Visual Studio, iReport Designer, XMLSpy.</li>
-		</ul>
-		<br/>
+		<div id="btn">
+			<h3><button onclick="toggleNavPanel('skills_panel', '750px', 'arrowSkills')">Details <span id="arrowSkills">&#9662;</span></button>
+			</h3>
+		</div>
+		<div id="skills_panel">
+			<div>
+				<p><ul>
+					<li>Javascript and jQuery: Interactive resume applications and responsive design.</li>
+					<li>PHP Server Side Programming: Used PHP to create several on-line web applications based on XAMPP. Functionality based on courses in Dynamic Web Applications.</li>
+					<li>Git Version Control: use of PuTTY, Git and GitHub to commit changes to current web applications and to deploy changes to my live environment</li>
+					<li>SQL:  Ability to create complex and advanced sql queries for application development and report writing.  Recent work has included multi-field joins, self joins, aliasing, subqueries, aggregate functions and recursive code.</li>
+					<li>MS SQL Server:  Utilized to write queries and produce reports from the departments Project Management and Time and Attendance applications.  Completed trainings including<em> Working with Sub queries Using MS SQL Server</em>.</li>
+					<li>MySQL:  Designed and implemented databases for on-line web applications and as the back-end of my Wordpress website.</li>
+					<li>Business Analyst: Frequent communication with end user customers and classroom training course - “<em>Business Analysis for IT Professionals”</em>.</li>
+					<li>JAVA Programming:  Scripts written to automate database queries and updates.  Completed college courses including <em>Data Structures.</em></li>
+					<li>C++:  Completed courses in <em>Object Oriented Programming </em>at Bunker Hill Community College.</li>
+					<li>Python:  Programs written to manipulate text files and search for email and web addresses.  Completed several online courses including: <em>Programming Languages</em> - Udacity, CS-262.</li>
+					<li>IDE’s: NetBeans, Eclipse, Visual Studio, iReport Designer, XMLSpy.</li>
+				</ul></p>
+			</div>
+		</div>	
+
+
+		
 		<h3>EDUCATION:</h3>
 		<ul>
 			<li>Rensselaer Polytechnic Institute, Troy, New York, BS Physics</li>
 		</ul>
+
 		<h3>CERTIFICATIONS:</h3>
 		<ul>
 			<li>Certified ScrumMaster® (CSM), scrumalliance.org (2015)</li>
 			<li>Oracle Database SQL Certified Expert 1Z0-047 (2014)</li>
 			<li>ITIL Foundation Certified, ITIL V3</li>
 		</ul>
+
 		<h3>PROFESSIONAL ORGANIZATIONS:</h3>
 		<ul>
 			<li>DAMA New England - Data management professional organization</li>
 			<li>Boston PHP - Web Development, and Open Source technology</li>
 		</ul>
-		<br/>
+
 		<h3>EXPERIENCE:</h3>
 		<br/>
-		<p><b>Application Developer</b></p>
-		<p>Commonwealth of MA, Integration Services Group</p>
-		<p>March 2012-present</p>
-		<ul>
-			<li>
-			<p>Application Administrator:  Maintenance and configuration of WebSphere based Service Desk application supporting ITIL processes.  Includes Asset, Chargeback, Service Request and Workflow Management.</p>
-			</li>
-			<li>
-			 <p>Database Analyst:  Perform troubleshooting and analysis utilizing 'bottom up' data modeling. Provide back-end application maintenance.  Extensive experience with Oracle 11g and Oracle SQL Developer.  Some familiarity with MS SQL Server, MySQL and  PostgreSQL.</p>
-			</li>
-			<li>
-			<p>Integration Programming:  Using Windows Batch Files, XML and SFTP to automate previously manual datafile transfer among enterprise applications.</p>
-			</li>
-			<li>
-			<p>JasperReports Server Administrator:  Introduced real-time, web reports and dashboards using iReport Designer.</p>
-			</li>
-			<li>
-			<p>Atlassian JIRA Administrator:  Release Management software for Project and Issue tracking. Design of custom work flows to facilitate project management.</p>
-			</li>
-		</ul>
-		<p><br></p>
 
-		<p><b>Asset Data Analyst</b></p>
-		<p>Commonwealth of MA, Technology Finance Group</p>
-		<p>February 2010-March 2012</p>
-		<ul>
-			<li>
-			<p>Hardware and Software Maintenance:  Managed annual asset maintenance.  Performed reconciliation  of cost and warranty data with procurement records reducing unnecessary maintenance spending.</p>
-			</li><li>
-			<p>MS Access, Visual Basic:  Created an IT Asset application consisting of a relational database, forms and summary reports.  Enabled rapid data entry, reconciliation and cost reporting.</p>
-			</li>
-		</ul>
-		<p><br></p>
+		<div id="btn">
+			<p><button onclick="toggleNavPanel('appDev_panel', '500px', 'arrowApp')">Details <span id="arrowApp">&#9662;</span></button>
+			Application Developer, Commonwealth of MA, Integration Services Group, March 2012-present</p>
+		</div>
+		<div id="appDev_panel">
+			<div>
+				<p>
+					<ul>
+						<li>
+						<p>Application Administrator:  Maintenance and configuration of WebSphere based Service Desk application supporting ITIL processes.  Includes Asset, Chargeback, Service Request and Workflow Management.</p>
+						</li>
+						<li>
+						 <p>Database Analyst:  Perform troubleshooting and analysis utilizing 'bottom up' data modeling. Provide back-end application maintenance.  Extensive experience with Oracle 11g and Oracle SQL Developer.  Some familiarity with MS SQL Server, MySQL and  PostgreSQL.</p>
+						</li>
+						<li>
+						<p>Integration Programming:  Using Windows Batch Files, XML and SFTP to automate previously manual datafile transfer among enterprise applications.</p>
+						</li>
+						<li>
+						<p>JasperReports Server Administrator:  Introduced real-time, web reports and dashboards using iReport Designer.</p>
+						</li>
+						<li>
+						<p>Atlassian JIRA Administrator:  Release Management software for Project and Issue tracking. Design of custom work flows to facilitate project management.</p>
+						</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+		
 
-		<p><b>Cost Accountant</b></p>
-		<p>Commonwealth of MA, Technology Finance Group</p>
-		<p>February 2007-March 2010</p>
-		<ul>
-			<li>
-			<p>Revenue projection:  Created an algorithm and report to visualize trending of monthly Chargeback Revenues for $50M IT Services department.</p>
-			</li><li>
-			<p>Information Warehouse:  Acquired in depth knowledge of state accounting system and enterprise data warehouse.</p>
-			</li>
-		</ul>
+		<div id="btn">
+			<p><button onclick="toggleNavPanel('asset_panel', '100px', 'arrowAsset')">Details <span id="arrowAsset">&#9662;</span></button>
+			Asset Data Analyst, Commonwealth of MA, Integration Services Group, February 2010-March 2012</p>
+		</div>
+		<div id="asset_panel">
+			<div>
+				<p>
+					<ul>
+						<li>
+						<p>Hardware and Software Maintenance:  Managed annual asset maintenance.  Performed reconciliation  of cost and warranty data with procurement records reducing unnecessary maintenance spending.</p>
+						</li><li>
+						<p>MS Access, Visual Basic:  Created an IT Asset application consisting of a relational database, forms and summary reports.  Enabled rapid data entry, reconciliation and cost reporting.</p>
+						</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+
+		<div id="btn">
+			<p><button onclick="toggleNavPanel('cost_panel', '100px', 'arrowCost')">Details <span id="arrowCost">&#9662;</span></button>
+			Cost Accountant, Commonwealth of MA, Technology Finance Group, February 2007-March 2010</p>
+		</div>
+		<div id="cost_panel">
+			<div>
+				<p>
+					<ul>
+						<li>
+						<p>Revenue projection:  Created an algorithm and report to visualize trending of monthly Chargeback Revenues for $50M IT Services department.</p>
+						</li><li>
+						<p>Information Warehouse:  Acquired in depth knowledge of state accounting system and enterprise data warehouse.</p>
+						</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+
+		
 		<br/>
+		<footer>
+    	Today is: 
+	      <script type="text/javascript">
+
+	        var currentTime = new Date();
+	        var dArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday :)","Saturday"]
+	        var day = currentTime.getDate();
+	        var endding;
+	        switch (day) {
+	          case 1:
+	          case 21:
+	          case 31:
+	            endding = 'st';
+	            break;
+	          case 2: 
+	          case 22:
+	            endding = 'nd';
+	            break;
+	          case 3: 
+	          case 23:
+	            endding = 'rd';
+	            break;
+	          default: 
+	              endding = 'th';
+	        }
+	        document.write(dArray[currentTime.getDay()]);
+	        document.write(" the " + day + endding);
+	      </script>
+    	<br/>
+    	<a href="mailto:jmeroth@alum.rpi.edu?Subject=Website%20Questions&body=This%20is%20my%20inquiry.">Send email</a>
+    	<br/>
+    	<a href="#top">(Return to top of page)</a>
+  		</footer>
 	</div>
+	
 </body>
 </html>
