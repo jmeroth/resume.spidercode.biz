@@ -60,7 +60,7 @@ div#topbar > #sections_panel{
 div#topbar > #sections_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 238px;
+	height: 30px;
 	margin: 10px;
 	color: #FC0;
 }
@@ -79,7 +79,7 @@ div > #skills_panel{
 div > #skills_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 238px;
+	height: 605px;
 	margin: 10px;
 	color: #FC0;
 }
@@ -98,7 +98,7 @@ div > #appDev_panel{
 div > #appDev_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 238px;
+	height: 370px;
 	margin: 10px;
 	color: #FC0;
 }
@@ -117,7 +117,7 @@ div > #asset_panel{
 div > #asset_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 95px;
+	height: 140px;
 	margin: 10px;
 	color: #FC0;
 }
@@ -136,7 +136,7 @@ div > #cost_panel{
 div > #cost_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 95px;
+	height: 140px;
 	margin: 10px;
 	color: #FC0;
 }
