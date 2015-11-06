@@ -46,6 +46,28 @@
 	</div>
 
 
+
+<!--  Vary Heading Color  -->
+<script>
+
+function varyColor() {
+	var r = Math.floor(Math.random() * 256);
+	var g = 200;
+	var b = Math.floor(Math.random() * 256);
+
+	var myColor = "rgb(" + r + "," + g + "," + b + ")";
+
+	//document.getElementById("logo").style.color = myColor);
+	//alert("rgb(" + r + "," + g + "," + b + ")");
+	document.getElementById("logo").style.color = myColor;
+	//$('h1').css('color', jQuery.Color( myColor));
+}
+
+setInterval("varyColor()",  950);
+
+
+</script>
+
  
 
 	<div class="content">
