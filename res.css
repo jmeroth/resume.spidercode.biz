@@ -97,7 +97,7 @@ div > #appDev_panel{
 div > #appDev_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 370px;
+	height: 270px;
 	margin: 10px;
 	color: #FC0;
 }
@@ -116,7 +116,7 @@ div > #asset_panel{
 div > #asset_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 140px;
+	height: 185px;
 	margin: 10px;
 	color: #FC0;
 }
@@ -135,7 +135,7 @@ div > #cost_panel{
 div > #cost_panel > div{
 	background: #333;
 	padding: 20px;
-	height: 140px;
+	height: 205px;
 	margin: 10px;
 	color: #FC0;
 }
