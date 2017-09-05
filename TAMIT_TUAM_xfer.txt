@@ -1,0 +1,97 @@
+@ECHO OFF
+:::::::::::::::::::::::::::::::::::::::::::::::::
+:: Data Transfer    John Meroth    2014 03 18  ::
+::   Updated    2014 08 07                     ::
+:::::::::::::::::::::::::::::::::::::::::::::::::
+
+:: move old files to archive folder
+CMD /C c:\scripts\archive_previous_runs.bat
+
+:: retrieve date string to append to end of new file names
+CALL :mydatefunction
+
+:: define log file
+set logfile=c:\scripts\txferlog.log
+
+:: define ssh fingerprints
+set "fingerprints="ssh-rsa 1024 4d:d3:8d:c1:e5:29:1d:20:ed:42:5a:37:f5:fa:56:b1";"ssh-rsa 1024 bf:9e:6f:40:86:cb:23:68:92:56:8d:41:a7:44:c2:f4";"ssh-rsa 1024 43:3c:59:4d:75:b3:3a:22:e0:ad:cc:b9:5e:9b:56:47""
+
+:: transfer files
+winscp.exe /console /log=%logfile% /command "option batch continue" "option confirm off" "open lparuser1@wsgw.mass.gov -hostkey="%fingerprints%"" "put c:\maximo\flatfiles\*CMWUNIX* /outfiles/chargeback/lpar_%mydate%.csv" close exit
+del c:\maximo\flatfiles\*CMWUNIX*
+close 
+
+winscp.exe /console /log=%logfile% /command "option batch continue" "option confirm off" "open servers@wsgw.mass.gov -hostkey="%fingerprints%"" "put c:\maximo\flatfiles\*CMWSERVERS* /outfiles/chargeback/servers_%mydate%.csv" close exit
+del c:\maximo\flatfiles\*CMWSERVERS*
+close 
+
+winscp.exe /console /log=%logfile% /command "option batch continue" "option confirm off" "open circuits@wsgw.mass.gov -hostkey="%fingerprints%"" "put c:\maximo\flatfiles\*CMWCIRCUITS* /outfiles/chargeback/circuits_%mydate%.csv" close exit
+del c:\maximo\flatfiles\*CMWCIRCUITS*
+close 
+
+winscp.exe /console /log=%logfile% /command "option batch continue" "option confirm off" "open firewall@wsgw.mass.gov -hostkey="%fingerprints%"" "put c:\maximo\flatfiles\*CMWFIREWALL* /outfiles/chargeback/firewalls_%mydate%.csv" close exit
+del c:\maximo\flatfiles\*CMWFIREWALL*
+close 
+
+winscp.exe /console /log=%logfile% /command "option batch continue" "option confirm off" "open vm_servers@wsgw.mass.gov -hostkey="%fingerprints%"" "put c:\maximo\flatfiles\*CMWVIRTUAL* /outfiles/chargeback/virtual_%mydate%.csv" close exit
+del c:\maximo\flatfiles\*CMWVIRTUAL*
+close 
+
+goto :eof
+
+
+:mydatefunction
+SETLOCAL
+:: Last day of prior month accounting for leap years
+:: John Meroth 2014 03 11 (update:  2014 08 06)
+
+:: extract parts of current date
+FOR /F "tokens=1-4 delims=/ " %%I IN ('DATE /t') DO (
+	SET yr=%%L
+	SET mo=%%J
+	SET dy=%%K
+)
+
+:: set prior month
+:: 	in Jan, prior month is Dec of prior year
+::	August bug:  SET /a command converts to octal
+::		therefore 08 and 09 are handled separately
+IF %mo% LEQ 01 (
+	SET mo=12
+	SET /a yr=%yr%-1
+) ELSE IF %mo% EQU 08 (
+	SET mo=7
+) ELSE IF %mo% EQU 09 (
+	SET mo=8
+) ELSE (
+	SET /a mo=%mo%-1
+)
+
+:: test for leap year
+set _leap=no
+set /a "_mod_4=%yr%%%4"
+:: use to check for end of century leap year
+set /a "_mod_100=%yr%%%100"
+set /a "_mod_400=%yr%%%400"
+IF %_mod_4% EQU 0 (IF %_mod_100% NEQ 0 set _leap=yes)
+IF %_mod_4% EQU 0 (IF %_mod_400% EQU 0 set _leap=yes)
+	
+::  days in prior month
+IF %mo% EQU 1 (set dy=31) 
+IF %mo% EQU 2 ( IF %_leap%==yes (set dy=29) ELSE (set dy=28))
+IF %mo% EQU 3 (set dy=31)
+IF %mo% EQU 4 (set dy=30)
+IF %mo% EQU 5 (set dy=31)
+IF %mo% EQU 6 (set dy=30)
+IF %mo% EQU 7 (set dy=31)
+IF %mo% EQU 8 (set dy=31)
+IF %mo% EQU 9 (set dy=30)
+IF %mo% EQU 10 (set dy=31)
+IF %mo% EQU 11 (set dy=30)
+IF %mo% EQU 12 (set dy=31)
+
+::  backfill first digit with '0' (Jan-Sep)
+SET zer=0
+IF %mo% LSS 10 (set mo=%zer%%mo%) ELSE (set mo=%mo%)
+
+ENDLOCAL & SET mydate=%yr%%mo%%dy%
