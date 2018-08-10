@@ -1,221 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Meroth</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/res.css">
+  </head>
+  <body>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-	<link href="css/res.css" rel="stylesheet">
-	
-	<script type="text/javascript">
-	function toggleNavPanel(x,y,z){
-		var panel = document.getElementById(x);
-		var navarrow = document.getElementById(z);
-		var maxH = y;
-		if(panel.style.height == maxH){
-			panel.style.height = "0px";
-			navarrow.innerHTML="&#9662";
-		}else{
-			panel.style.height=maxH;
-			navarrow.innerHTML="&#9652";
-		}
-	}
-    </script>
-
-</head>
-
-<body>
-
-	<div id="postit">John Meroth<br>
-		781-856-4140<br>
-		<a href="mailto:jmeroth@alum.rpi.edu?Subject=Resume%20Questions&body=This%20is%20my%20inquiry."><span id="email">jmeroth@alum.rpi.edu</span></a>
-	</div>
-
-<!-- Topbar Section -->
-
-	<div id="topbar">
-		<div id="logo">Resum&#233;</div>
-	</div>
-
-
-
-<!--  Vary Heading Color  -->
-<script>
-
-function varyColor() {
-	var r = Math.floor(Math.random() * 256);
-	var g = 200;
-	var b = Math.floor(Math.random() * 256);
-
-	var myColor = "rgb(" + r + "," + g + "," + b + ")";
-
-	//document.getElementById("logo").style.color = myColor);
-	//alert("rgb(" + r + "," + g + "," + b + ")");
-	document.getElementById("logo").style.color = myColor;
-	//$('h1').css('color', jQuery.Color( myColor));
-}
-
-setInterval("varyColor()",  950);
-
-
-</script>
-
- 
-
-	<div class="content">
-		<header id="top">
-    		<h3>PROFESSIONAL SUMMARY:</h3>
-			<p>Skilled in database administration, data analysis, scripting, application integration and web technologies.
-			Interests include data visualizations, reporting and application development.</p>
-    		<hr />
-  		</header>
-		
-
-		<h3>INFORMATION TECHNOLOGY SKILLS:</h3>
-		<div id="btn">
-			<h3><button onclick="toggleNavPanel('skills_panel', 'auto', 'arrowSkills')">Details and Links<span id="arrowSkills">&#9662;</span></button>
-			</h3>
-		</div>
-		<div id="skills_panel">
-			<div>
-				<p><ul>
-					<li>MS SQL Server: ad-hoc queries, stored procedures.</li>
-					<li>Oracle SQL Certification. <a href="img/OraDbSQLCertExpert.pdf">Certification </a></li>
-					<li>Other DBMS experience:  MySQL, PostgreSQL.</li>
-					<li>Tableau:  Create real-time <a href="https://public.tableau.com/profile/john.meroth#!/">dashboards</a> and geo-spacial visualizations.</li>
-					<li>Website: <a href="http://www.spidercode.org/wordpress/projects/">Projects</a></li>
-					
-					<li>Operating Systems:  Microsoft Windows– <a href="TAMIT_TUAM_xfer.txt">batch scripting</a>, Ubuntu Linux.</li>
-					<li>R, RStudio Statistical Computing Platform: visualizations, linear regression models.</li>
-					<li>PYTHON:  API programming to REST web services. Parsing JSON, XML and HTML.</li>
-					<li>PHP:  Created web applications based on the XAMPP stack, responsive web design.</li>
-					<li>JavaScript:  <a href=http://jsfiddle.net/user/jmeroth/fiddles/>JavaScript</a></li>
-					<li> Programming to automate database maintenance queries.</li>
-					<li>C++:  Computer Science coursework (BHCC).</li>
-					<li><a href="http://www.spidercode.org/wordpress/category/java/">JAVA</a>:  Data Structures, Database programming.
-					<li>Business Analyst training:  “Business Analysis for IT Professionals”.</li>
-					<li>Atlassian JIRA, SysAid: used for project management and issue tracking.</li>
-					<li>Experience with Wordpress and Drupal 7.<a href="http://www.spidercode.org"><b>www.spidercode.org</b></a></li>
-				</ul></p>
-			</div>
-		</div>	
-
-
-		
-		<h3>EDUCATION:</h3>
-		<ul>
-			<li>Rensselaer Polytechnic Institute (RPI), Troy, New York.  BS Physics</li>
-		</ul>
-
-		<h3>CERTIFICATIONS:</h3>
-		<ul>
-			<li>Certified ScrumMaster® (CSM), scrumalliance.org (2015)</li>
-			<li>Oracle Database SQL Certified Expert 1Z0-047 (2014)</li>
-			<li>ITIL Foundation Certified, ITIL V3</li>
-		</ul>
-
-		<h3>PROFESSIONAL ORGANIZATIONS:</h3>
-		<ul>
-			<li>Boston PHP - Web Development, and Open Source technology</li>
-			<li>DAMA New England - Data management professional organization</li>
-		</ul>
-
-		<h3>EXPERIENCE:</h3>
-		<br/>
-
-		<div id="btn">
-			<p><button onclick="toggleNavPanel('panel_4', 'auto', 'arrow1')">Details <span id="arrow1">&#9662;</span></button>
-			Database Analyst, Boston Public Library, City of Boston, 2016-present</p>
-		</div>
-		<div id="panel_4">
-			<div>
-				<p>
-					<ul>
-						<li>
-						<p>Application administration - Polaris: ILS (Integrated Library System) for MBLN.  Pharos for managing Public Computer access.  TixKeeper for registration and distributing program passes.  SysAid for Issue and Request ticket tracking.</p>
-						</li>
-						<li>
-						 <p>Reporting - Produce 18 monthly statistical reports as well as several daily, weekly quarterly and annual reports on utilization and circulation.  Create custom queries for ad-hoc reports as requested.</p>
-						</li>
-						<li>
-						<p>MS SQL Server – Manage Application Data for 5 Production databases using SQL Server Management Studio.</p>
-						</li>
-						<li>
-						<p>Customer service - Administering public access computers.  Full-filling staff service requests and issues.</p>
-						</li>
-						<li>
-						<p>Visualizations created accessing real-time data using Tableau Desktop, SQL Server, Python and Windows batch files.</p>
-						</li>
-					</ul>
-				</p>
-			</div>
-		</div>
-
-		<div id="btn">
-			<p><button onclick="toggleNavPanel('panel_3', '340px', 'arrow1')">Details <span id="arrow1">&#9662;</span></button>
-			Application Developer, Commonwealth of MA, Integration Services Group, 2012-2016</p>
-		</div>
-		<div id="panel_3">
-			<div>
-				<p>
-					<ul>
-						<li>
-						<p>Software support for major business applications from IBM  and CA serving about 800 users.  Resolve service tickets and implement solutions to application issues.  </p>
-						</li>
-						<li>
-						 <p>Database Analysis using SQL, Java and XML to create reports and graphs.  Introduced real-time, web reports and dashboards.</p>
-						</li>
-						<li>
-						<p>Design and implementation of data integration solutions using Windows Script programming, Scheduled Tasks and SFTP.</p>
-						</li>
-					</ul>
-				</p>
-			</div>
-		</div>
-		
-
-		<div id="btn">
-			<p><button onclick="toggleNavPanel('panel_2', '245px', 'arrow2')">Details <span id="arrow2">&#9662;</span></button>
-			Asset Data Analyst, Commonwealth of MA, Integration Services Group, 2010-2012</p>
-		</div>
-		<div id="panel_2">
-			<div>
-				<p>
-					<ul>
-						<li>
-						<p>Managed warranty renewal process implemented to track $30M in annual expenditures.</p>
-						</li><li>
-						<p>Reconciled warranty data with procurement records reducing maintenance spending by $200k.</p>
-						</li><li>
-						<p>Developed an internal IT asset application through the design of a relational database, data entry forms and summary reports using MS Access and VBA.  Custom forms enabled rapid data entry and consistent, reliable cost reporting.</p>
-						</li>
-					</ul>
-				</p>
-			</div>
-		</div>
-
-		<div id="btn">
-			<p><button onclick="toggleNavPanel('panel_1', '275px', 'arrow3')">Details <span id="arrow3">&#9662;</span></button>
-			Cost Accountant, Commonwealth of MA, Technology Finance Group, 2007-2010</p>
-		</div>
-		<div id="panel_1">
-			<div>
-				<p>
-					<ul>
-						<li>
-						<p>Created a revenue projection algorithm to visualize monthly trends for $50M IT services department.  Achieved projections within 3% of actuals.</p>
-						</li><li>
-						<p>Built an in-house CRM application with MS Access and Visual Basic used to track new business.</p>
-						</li><li>
-						<p>Acquired in-depth knowledge of state accounting system and enterprise data warehouse.  Introduced interdepartmental vendor spending reports for central administration.</p>
-						</li>
-					</ul>
-				</p>
-			</div>
-		</div>
-
-		
-		<br/>
-		<footer>
-    	Today is: 
+  	<div id="postit">Today is: <br>
 	      <script type="text/javascript">
 	        var currentTime = new Date();
 	        var dArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday :)","Saturday"]
@@ -241,12 +34,131 @@ setInterval("varyColor()",  950);
 	        document.write(dArray[currentTime.getDay()]);
 	        document.write(" the " + day + endding);
 	      </script>
-    	<br/>
-    	<a href="mailto:jmeroth@alum.rpi.edu?Subject=Website%20Questions&body=This%20is%20my%20inquiry.">Send email</a>
-    	<br/>
-    	<a href="#top">(Return to top of page)</a>
-  		</footer>
 	</div>
-	
-</body>
+
+  	<div class="container">
+  		<!--  Vary Heading Color  -->
+	<script>
+
+	function varyColor() {
+		var r = Math.floor(Math.random() * 256);
+		var g = 200;
+		var b = Math.floor(Math.random() * 256);
+
+		var myColor = "rgb(" + r + "," + g + "," + b + ")";
+
+		//document.getElementById("logo").style.color = myColor);
+		//alert("rgb(" + r + "," + g + "," + b + ")");
+		document.getElementById("my-name").style.color = myColor;
+		//$('h1').css('color', jQuery.Color( myColor));
+
+	}
+
+	setInterval("varyColor()",  950);
+
+
+	</script>
+	    <section>
+	    	<div>
+	    		<div><img src="img/lkin_john.jpg" alt="avatar" class="avatar"></div>
+	    	</div>
+	    	<div>
+	    		<div id="my-name" class="my-name">John Meroth</div>
+	    		<div class="my-title">Programmer/ Analyst</div>
+	    		<div class="my-links">
+	    			<div class="link-item">
+	    				<a href="mailto:jmeroth@alum.rpi.edu?Subject=Resum&#233%20inquiry">jmeroth@alum.rpi.edu</a>
+	    			</div>
+	    			<div class="link-item">
+	    				<a href="tel:781-856-4140">781-856-4140</a>
+	    			</div>
+	    			<div class="link-item">
+	    				<a href="https://www.linkedin.com/in/jmeroth">www.linkedin.com/in/jmeroth</a>
+	    			</div>
+	    		</div> <!-- end links -->
+	    		<p>Data Analyst skilled in scripting, application integration and web technologies.</p>
+	    	</div>
+	    </section>
+	    <section>
+	    	<div class="section-title">Experience</div>
+	    	<div>
+
+	    		<div class="job">
+	    			<div class="job-title-container">
+	    				<div>
+	    					<div class="job-company">Boston Public Library, City of Boston</div>
+	    					<div class="job-title">Database Analyst</div>
+	    				</div>
+	    				<div>2016 - present</div>
+	    			</div> <!-- end job-title-container -->
+	    			<p>Application administration of complex integrated library applications. Custom scripting for report development and automation. Maintenance and troubleshooting digital signage systems and circulation peripherals.  API programming and data analysis for dashboards and visualizations.</p>      			
+	    		</div> <!-- end job -->
+
+	    		<div class="job">
+	    			<div class="job-title-container">
+	    				<div>
+	    					<div class="job-company">Integration Services, Commonwealth of Massachusetts</div>
+	    					<div class="job-title">Application Developer</div>
+	    				</div>
+	    				<div>2012 - 2016</div>
+	    			</div> <!-- end job-title-container -->
+	    			<p>Provided administration and software support for a wide range of business applications.  Produced custom scripts, reports and visualizations utilizing SQL, Java and XML.  Created application integration solutions using Windows Script programming, Scheduled Tasks and SFTP.</p>    			
+	    		</div> <!-- end job -->
+
+	    		<div class="job">
+	    			<div class="job-title-container">
+	    				<div>
+	    					<div class="job-company">Technology Finance, Commonwealth of Massachusetts</div>
+	    					<div class="job-title">Asset Data Analyst</div>
+	    				</div>
+	    				<div>2010 - 2012</div>
+	    			</div> <!-- end job-title-container -->
+	    			<p>Managed warranty renewal process implemented to track $30M in annual expenditures. Reconciled warranty data with procurement records reducing maintenance spending by $200k.</p>      			
+	    		</div> <!-- end job -->
+
+	    	</div>
+	    </section>
+	    <section>
+	    	<div class="section-title">Education</div>
+	    	<div>
+
+	    		<div class="job">
+	    			<div class="job-title-container">
+	    				<div>
+	    					<div class="job-company"></div>
+	    					<div class="job-title"></div>
+	    				</div>
+	    				<div></div>
+	    			</div> <!-- end job-title-container -->
+	    			<p>BS Physics, Rensselaer Polytechnic Institute (<a href="https://www.rpi.edu/">RPI</a>), Troy, New York  12180</p>    			
+	    		</div> <!-- end job -->
+	    	</div>
+	    </section>
+	    <section>
+	    	<div class="section-title">Skills</div>
+	    	<div>
+	    		<div class="skills-container">
+	    			<ul>
+	    				<li>MS SQL Server</li>
+	    				<li><a href="img/OraDbSQLCertExpert.pdf">Oracle SQL</a></li>
+	    				<li>PostgreSQL</li>
+	    			</ul>
+	    			<ul>
+	    				<li><a href="img/Tableau_dash_BPLVIZ_1.jpg">Tableau</a></li>
+	    				<li><a href="img/Jupyter.jpg">Python</a></li>
+	    				<li>Django</li>
+	    			</ul>
+	    			<ul>
+	    				<li>PHP</li>
+	    				<li>HTML/ CSS</li>
+	    				<li>Java</li>
+	    			</ul>
+	    		</div> <!-- end skills-container -->
+	    	</div>
+	    </section>
+	    <section>
+	    	<div></div>
+	    </section>
+	</div> <!-- end container -->
+  </body>
 </html>
