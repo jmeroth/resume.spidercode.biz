@@ -24,7 +24,7 @@ def main():
     url = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson"  
     r = requests.get(url)
     print(r)
-    if(str(r) == "<Response [200]>"):
+    if(str(r) == "&lt;Response [200]&gt;"):
         myjson = r.json()
         #print(myjson["metadata"])
         printResults(myjson)
