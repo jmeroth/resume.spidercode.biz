@@ -5,6 +5,13 @@
     <title>Meroth</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/res.css">
+    <script type="text/javascript">
+		// Popup window code
+		function newPopup(url) {
+			popupWindow = window.open(
+				url,'popUpWindow','height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+	</script>
   </head>
   <body>
 
@@ -139,7 +146,7 @@
 	    	<div>
 	    		<div class="skills-container">
 	    			<ul>
-	    				<li>MS SQL Server</li>
+	    				<li><a href="JavaScript:newPopup('mysql.html');">MS SQL</a></li>
 	    				<li><a href="img/OraDbSQLCertExpert.pdf">Oracle SQL</a></li>
 	    				<li>PostgreSQL</li>
 	    			</ul>

@@ -1,0 +1,64 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SQL</title>
+  <body>
+  	<pre>
+-- =========================================
+-- Create a table of Pharos COMPUTER UTILIZATION data
+-- John Meroth  2017-05-03
+-- =========================================
+USE pharos
+GO
+
+IF OBJECT_ID('dbo.utilization', 'U') IS NOT NULL
+  DROP TABLE dbo.utilization
+GO
+
+CREATE TABLE dbo.utilization
+(
+  hourPoint datetime NOT NULL, 
+  [Transaction ID] int NOT NULL, 
+  [User ID] varchar(30) NULL, 
+  computer varchar(30) NULL,
+  [Start Time] datetime NULL,
+  Duration int NULL,
+  endTime datetime NULL,
+  inUse int NUll
+    CONSTRAINT PK_UTILIZATION PRIMARY KEY (hourPoint, [Transaction ID])
+)
+GO
+
+-- =========================================
+-- Loop through hours of operation and generate data
+-- =========================================
+DECLARE @beginDate AS Datetime = '2015-05-10 00:00:00.000'
+DECLARE @pointInTime AS INT = 9
+
+WHILE @pointInTime < 22
+  BEGIN
+    INSERT INTO dbo.utilization
+    SELECT
+      dateadd(HH, @pointInTime, @beginDate) hourPoint,
+      [Transaction ID], [User ID], computer, [Start Time], Duration, dateadd(MI, Duration, [Start Time]) endTime
+      , CASE 
+        WHEN @pointInTime * 60 between  
+          datepart(hh,[Start Time])*60 + datepart(mi,[Start Time])
+           and
+          datepart(hh,[Start Time])*60 + datepart(mi,[Start Time]) + Duration THEN 1 
+        ELSE 0 
+            END inUse
+      FROM [pharos].[dbo].[rpt_computer_transactions]
+      where 1=1
+      --==============================================
+      -- Insert the number of days to extract data
+      --==============================================
+      and [Start Time] between @beginDate and dateadd(DD, 14, @beginDate)
+      and [Computer Group] = 'Tech Central Adult'
+    SET @pointInTime +=1;
+  END;
+
+  	</pre>
+  </body>
+</html> 
