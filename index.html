@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Meroth</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/res.css">
+    <link rel="stylesheet" type="text/css" href="css/res.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
     <script type="text/javascript">
 		// Popup window code
 		function newPopup(url) {
@@ -44,25 +45,20 @@
 	</div>
 
   	<div class="container">
-  		<!--  Vary Heading Color  -->
-	<script>
 
+  	<!--  Vary Heading Color  -->
+	<script>
 	function varyColor() {
 		var r = Math.floor(Math.random() * 256);
 		var g = 200;
 		var b = Math.floor(Math.random() * 256);
-
 		var myColor = "rgb(" + r + "," + g + "," + b + ")";
-
 		//document.getElementById("logo").style.color = myColor);
 		//alert("rgb(" + r + "," + g + "," + b + ")");
 		document.getElementById("my-name").style.color = myColor;
 		//$('h1').css('color', jQuery.Color( myColor));
-
 	}
-
 	setInterval("varyColor()",  950);
-
 
 	</script>
 	    <section>
